@@ -14,7 +14,7 @@
 	//  Submenu Dropdown Toggle
 	function DropdownToggole () {
 		if($('.main-header li.dropdown ul').length){
-			$('.main-header li.dropdown').append('<div class="dropdown-btn"></div>');
+			$('.main-header li.dropdown').append('<div class="dropdown-btn"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>');
 			
 			//Dropdown Button
 			$('.main-header li.dropdown .dropdown-btn').on('click', function() {
