@@ -11,6 +11,13 @@
  document.write('<link rel="stylesheet" type="text/css" href="css/style.css?v=' + Math.random() + '"/>');
  document.write('<link rel="stylesheet" type="text/css" href="css/responsive.css?v=' + Math.random() + '"/>');
 </script>
+
+    <script src="js/dist/Chart.min.js"></script>
+    <script src="js/dist/utils.js"></script>
+    <style type="text/css">/* Chart.js */
+        @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+    </style>
+
 </head>
 <body class="about-page">
 <div class="preloader"></div>
@@ -26,7 +33,7 @@
             <div class="nav-outer">
                 <div class="header-top">
                     <div class="contact">
-                        <span class="icon fa fa-phone"></span>Call :  +(86) XXX XXXX XXXX
+                        <span class="icon fa fa-phone"></span><!-- Call :  +(86) XXX XXXX XXXX -->
                     </div>
                     <div id="polyglotLanguageSwitcher">
                         <form action="#">
@@ -60,8 +67,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="about_en.html">About</a></li>
-
                                 <li><a href="contact_en.html">Contact</a></li>
+								<li><a href="QA_en.html">Q&A</a></li>
                             </ul>  
                         </div> 
                     </div>
@@ -137,18 +144,18 @@
             <div class="column col-md-4 col-sm-12">
                 <div class="item left1">
                     <div class="icon"><span class="icon-food"></span></div>
-                    <h4><a>Famous teacher</a></h4>
-                    <p>Experienced teachers come to the door for one-on-one intensive coaching, intensive training for the test points, easily enter the top schools.</p>
+                    <h4><a>Strong educational resources</a></h4>
+                    <p>Co-work with well-known training institutions in Shanghai to provide a strong educational support</p>
                 </div> 
                 <div class="item left1">
                     <div class="icon"><span class="icon-blocks"></span></div>
-                    <h4><a>Education housekeeper</a></h4>
-                    <p>Take the hassle out of education and make it easy for you to have a relaxing time</p>
+                    <h4><a>Educational housekeeper</a></h4>
+                    <p>A great way to take your mind off of things, make your education a breeze, and having a good time!</p>
                 </div> 
                 <div class="item left1">
                     <div class="icon"><span class="icon-school"></span></div>
-                    <h4><a>College guarantee</a></h4>
-                    <p>If the standard school is unsuccessful, you will pay for your training!</p>
+                    <h4><a>Deposit for further education</a></h4>
+                    <p>The first education company in Shanghai to set up a deposit for further education, the funds are supervised by a third-party bank, no worries about further education.</p>
                 </div> 
 
             </div>
@@ -175,8 +182,8 @@
                 </div> 
                 <div class="item left2">
                     <div class="icon"><span class="icon-gestures"></span></div>
-                    <h4><a>Outreach training</a></h4>
-                    <p>Provide your child with the full development of mind, will, thinking and teamwork</p>
+                    <h4><a>Children's insurance</a></h4>
+                    <p>Sign up you will get AIA Children's Plan insurance</p>
                 </div> 
                    
             </div>
@@ -185,6 +192,17 @@
     </div>
 </section>
 
+<section class="team">
+    <div class="container">
+        <div class="section-title center pb-60">
+            <h2>Our<span>Team</span></h2>
+        </div>
+        <div id="canvas-holder" class="item wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s" data-wow-offset="0" style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeIn;">
+            <canvas id="chart-area"></canvas>
+        </div>           
+
+    </div>
+</section>
 
 <section class="sponser-section pdt-40 style-3">
     <div class="container">
@@ -218,23 +236,20 @@
                     <div class="menu">
                         <ul class="clearfix">
                             <li><a href="index_en.html">home</a></li>
-                            <li class="submenu"><a>product</a>
-                                <ul>
-                                    <li><a href="Product_1_en.html">Domino entering university</a></li>
-                                    <li><a href="Product_2_en.html">Domino education housekeeper</a></li>
-                                </ul>
+                            <li id="footer-submenu" onmouseleave="footerSubmenuOut()"><a onmouseover="footerSubmenuOn()">Product</a>
                             </li>
                             <li><a href="about_en.html">about</a></li>
                             <li><a href="contact_en.html">contact</a></li>
+                            <li><a href="QA_en.html">Q&A</a></li>
                         </ul>
                     </div>
-                    <div class="copy-right">
-<!--                         Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> -->
-                    </div>
+
                 </div>
             </div>
         </div>
-        
+        <div style="background-color: #fafafa; text-align: center;">
+                <a style="font-size: 12px; font-family: 'PingFang SC'; color: #9195a3" href="">沪ICP备20015079号 | 版权所有© 2020 达涵教育</a>
+        </div>
     </div>
 </section>
 
@@ -286,17 +301,58 @@
     <script src="assets/Polyglot-Language-Switcher-master/js/jquery.polyglot.language.switcher.js"></script>
     <script src="assets/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
     <script src="assets/scrollbar.js"></script>
-    
-    <!--<script src="js/default-map-script.js"></script>-->
     <script src="js/script.js"></script>
 
+    <script>  
+        var config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [
+                        10,
+                        20,
+                        50,
+                        20,
+                    ],
+                    backgroundColor: [
+                        window.chartColors.red,
+                        window.chartColors.orange,
+                        window.chartColors.green,
+                        window.chartColors.blue,
+                    ],
+                    label: 'Dataset 1'
+                }],
+                labels: [
+                    '10% Relevant educators',
+                    '20% Teachers in Shanghai',
+                    '50% Excellent teachers in institutions',
+                    '20% Outstanding teachers in school',
+                ]
+            },
+            options: {
+                responsive: true,
+                aspectRatio: 3
+            },
+        };
 
-
-
-
-
-
-
+        window.onload = function() {
+            var ctx = document.getElementById('chart-area').getContext('2d');
+            window.myPie = new Chart(ctx, config);
+        };
+    </script>
+    <script type="text/javascript">
+    function footerSubmenuOn() {
+        $("#footer-submenu").html(
+            "<p><a href='Product_1_en.html'>Domino entering university</a></p>\
+            <p style='margin-top: -30px'><a href='Product_2_en.html'>Education housekeeper</a></p>"
+        ).hide().slideToggle(500)
+    };
+    function footerSubmenuOut() {
+        $("#footer-submenu").html(
+            "<a onmouseover='footerSubmenuOn()'>product</a>"
+        ).hide().slideToggle(500)
+    };
+    </script>
 </body>
 </html>
 

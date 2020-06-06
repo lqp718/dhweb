@@ -26,7 +26,7 @@
             <div class="nav-outer">
                 <div class="header-top">
                     <div class="contact">
-                        <span class="icon fa fa-phone"></span>Call :  +(86) XXX XXXX XXXX
+                        <span class="icon fa fa-phone"></span><!-- Call :  +(86) XXX XXXX XXXX -->
                     </div>
                     <div id="polyglotLanguageSwitcher">
                         <form action="#">
@@ -60,8 +60,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="about_en.html">About</a></li>
-
                                 <li><a href="contact_en.html">Contact</a></li>
+								<li><a href="QA_en.html">Q&A</a></li>
                             </ul>  
                         </div> 
                     </div>
@@ -72,26 +72,24 @@
     </div>
 </header>
 
-
-
-<section class="map-section">
-<!--     <div class="google-map" id="contact-google-map" data-map-lat="37.668705" data-map-lng="-121.882048" data-map-title="Awesome Place" data-map-zoom="12">
-    </div> -->
+<section class="page-title center">
     <div class="container">
-        <ul>
-            <li><a href="index_en.html">home</a></li>
-            <li><a href="about_en.html">contact us</a></li>
-        </ul>
+        <div class="container">
+            <h2>Reach us</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Reach us</a></li>
+            </ul>
+        </div>
     </div>
 </section>
-
 
 
 <section class="contact-us">
     <div class="upper">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12 column">
+                <!-- <div class="col-md-4 col-sm-6 col-xs-12 column">
                     <div class="item center">
                         <div class="icon">
                             <span class="icon-location"></span>
@@ -113,7 +111,7 @@
                             <p>+(86) XXX XXX XXXXX</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-4 col-sm-6 col-xs-12 column">
                     <div class="item center">
                         <div class="icon">
@@ -186,23 +184,20 @@
                     <div class="menu">
                         <ul class="clearfix">
                             <li><a href="index_en.html">home</a></li>
-                            <li class="submenu"><a>product</a>
-                                <ul>
-                                    <li><a href="Product_1_en.html">Domino entering university</a></li>
-                                    <li><a href="Product_2_en.html">Domino education housekeeper</a></li>
-                                </ul>
+                            <li id="footer-submenu" onmouseleave="footerSubmenuOut()"><a onmouseover="footerSubmenuOn()">Product</a>
                             </li>
                             <li><a href="about_en.html">about</a></li>
                             <li><a href="contact_en.html">contact</a></li>
+                            <li><a href="QA_en.html">Q&A</a></li>
                         </ul>
                     </div>
-                    <div class="copy-right">
-<!--                         Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> -->
-                    </div>
+
                 </div>
             </div>
         </div>
-        
+        <div style="background-color: #fafafa; text-align: center;">
+                <a style="font-size: 12px; font-family: 'PingFang SC'; color: #9195a3" href="">沪ICP备20015079号 | 版权所有© 2020 达涵教育</a>
+        </div>
     </div>
 </section>
 
@@ -254,13 +249,21 @@
     <script src="assets/Polyglot-Language-Switcher-master/js/jquery.polyglot.language.switcher.js"></script>
     <script src="assets/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
     <script src="assets/scrollbar.js"></script>
-    
-    <!--<script src="js/default-map-script.js"></script>-->
     <script src="js/script.js"></script>
-    <script type="text/javascript" src="js/bmap-offline/map3.0_init.js"></script>
-    <script type="text/javascript" src="js/bmap-offline/map3.0.js"></script>
 
-
+    <script type="text/javascript">
+    function footerSubmenuOn() {
+        $("#footer-submenu").html(
+            "<p><a href='Product_1_en.html'>Domino entering university</a></p>\
+            <p style='margin-top: -30px'><a href='Product_2_en.html'>Education housekeeper</a></p>"
+        ).hide().slideToggle(500)
+    };
+    function footerSubmenuOut() {
+        $("#footer-submenu").html(
+            "<a onmouseover='footerSubmenuOn()'>product</a>"
+        ).hide().slideToggle(500)
+    };
+    </script>
 </body>
 </html>
 

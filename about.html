@@ -236,24 +236,20 @@
                     <div class="menu">
                         <ul class="clearfix">
                             <li><a href="index.html">主页</a></li>
-                            <li class="submenu"><a>我们的产品</a>
-                                <ul>
-                                    <li><a href="Product_1.html">Product 1</a></li>
-                                    <li><a href="Product_2.html">Product 2</a></li>
-                                </ul>
+                            <li id="footer-submenu" onmouseleave="footerSubmenuOut()"><a onmouseover="footerSubmenuOn()">我们的产品</a>
                             </li>
                             <li><a href="about.html">关于我们</a></li>
                             <li><a href="contact.html">联系我们</a></li>
-							<li><a href="QA.html">Q&A</a><li>
+                            <li><a href="QA.html">Q&A</a></li>
                         </ul>
                     </div>
-                    <div class="copy-right">
-<!--                         Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> -->
-                    </div>
+
                 </div>
             </div>
         </div>
-        
+        <div style="background-color: #fafafa; text-align: center;">
+                <a style="font-size: 12px; font-family: 'PingFang SC'; color: #9195a3" href="">沪ICP备20015079号 | 版权所有© 2020 达涵教育</a>
+        </div>
     </div>
 </section>
 
@@ -343,6 +339,19 @@
             var ctx = document.getElementById('chart-area').getContext('2d');
             window.myPie = new Chart(ctx, config);
         };
+    </script>
+    <script type="text/javascript">
+    function footerSubmenuOn() {
+        $("#footer-submenu").html(
+            "<p><a href='Product_1.html'>多米诺入园升学</a></p>\
+            <p style='margin-top: -30px'><a href='Product_2.html'>教育管家</a></p>"
+        ).hide().slideToggle(500)
+    };
+    function footerSubmenuOut() {
+        $("#footer-submenu").html(
+            "<a onmouseover='footerSubmenuOn()'>我们的产品</a>"
+        ).hide().slideToggle(500)
+    };
     </script>
 </body>
 </html>

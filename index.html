@@ -195,7 +195,7 @@
                 data-endelementdelay="0.3"
                 data-endspeed="1200"
                 data-endeasing="Power4.easeIn"><h2>让国际名校为你转身</h2>
-                <p style="text-align: right;"><br><a style="font-size: 15px; padding: 4px 6px;"class="theme-btn btn-style-one" href="Product_2.html">了解更多</a></p>
+                <p style="text-align: right;"><br><a style="font-size: 15px; padding: 4px 6px;"class="theme-btn btn-style-one" href="Product_1.html">了解更多</a></p>
                 </div>
 
             </li> 
@@ -658,23 +658,10 @@
         </div>
         
     </div>
-<!--     <div class="see-more style-2">
-        <div class="container">
-            <div class="clearfix">
-                <h2 class="pull-left">加入我们以了解更多!</h2>
-                <div class="link pull-right">
-                    <a href="contact.html" class="theme-btn btn-style-one">关于我们</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
 </section>
 
 <section class="map-section">
-<!--     <div class="google-map" id="contact-google-map" data-map-lat="37.668705" data-map-lng="-121.882048" data-map-title="Awesome Place" data-map-zoom="12">
-        
-    </div> -->
-<!--     <div class="google-map" id="allmap"></div> -->
 </section>
 
 <section class="footer">
@@ -729,24 +716,20 @@
                     <div class="menu">
                         <ul class="clearfix">
                             <li><a href="index.html">主页</a></li>
-                            <li class="submenu"><a>我们的产品</a>
-                                <ul>
-                                    <li><a href="Product_1.html">Product 1</a></li>
-                                    <li><a href="Product_2.html">Product 2</a></li>
-                                </ul>
+                            <li id="footer-submenu" onmouseleave="footerSubmenuOut()"><a onmouseover="footerSubmenuOn()">我们的产品</a>
                             </li>
                             <li><a href="about.html">关于我们</a></li>
                             <li><a href="contact.html">联系我们</a></li>
-							<li><a href="QA.html">Q&A</a><li>
+                            <li><a href="QA.html">Q&A</a></li>
                         </ul>
                     </div>
-                    <div class="copy-right">
-<!--                         Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> -->
-                    </div>
+
                 </div>
             </div>
         </div>
-        
+        <div style="background-color: #fafafa; text-align: center;">
+                <a style="font-size: 12px; font-family: 'PingFang SC'; color: #9195a3" href="">沪ICP备20015079号 | 版权所有© 2020 达涵教育</a>
+        </div>
     </div>
 </section>
 
@@ -874,6 +857,19 @@
     <script src="assets/scrollbar.js"></script>
     <script src="js/script.js"></script>
 
+    <script type="text/javascript">
+    function footerSubmenuOn() {
+        $("#footer-submenu").html(
+            "<p><a href='Product_1.html'>多米诺入园升学</a></p>\
+            <p style='margin-top: -30px'><a href='Product_2.html'>教育管家</a></p>"
+        ).hide().slideToggle(500)
+    };
+    function footerSubmenuOut() {
+        $("#footer-submenu").html(
+            "<a onmouseover='footerSubmenuOn()'>我们的产品</a>"
+        ).hide().slideToggle(500)
+    };
+    </script>
 </body>
 </html>
 

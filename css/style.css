@@ -2526,9 +2526,6 @@ body.popup-visible{
     transition: .5s ease;
 }
 
-.footer .submenu ul{
-    display: none;
-}
 
 .footer .submenu a:hover ul{
     color: #ff9a00;
